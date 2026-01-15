@@ -320,8 +320,8 @@ function toggle_item(arr: string[], item: string) {
 
 <style scoped lang="sass">
 .quiz-container
-    height: 100dvh
     height: 100vh
+    height: 100dvh
     display: flex
     flex-direction: column
     align-items: center
