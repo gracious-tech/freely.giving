@@ -100,6 +100,15 @@
                 button.btn.back(@click="go_back") Back
                 button.btn.cont(@click="next_step") Continue
 
+        section.section(v-else-if="current_step === 4.1" :key="4.1")
+            .content
+                h2 Great! You agree those forms of ministry should be free
+                .text
+                    p This isn't what many people believe though. Most churches pay licensing fees to sing worship songs, and many Christian leaders sell books about God. The next steps will evaluate the appropriateness of this.
+            .controls
+                button.btn.back(@click="go_back") Back
+                button.btn.cont(@click="next_step") Continue
+
         section.section(v-else-if="current_step === 5" :key="5")
             .content
                 p You've chosen some forms of ministry as being ok to charge money for.
@@ -252,6 +261,14 @@ function next_step() {
         current_step.value = 2.1
     } else if (current_step.value === 2 && funding_missionaries.value === 'charge') {
         current_step.value = 2.2
+
+    // If don't think any ministry can be sold
+    } else if (current_step.value === 4 && items_no.value.length === all_items.length) {
+        current_step.value = 4.1
+
+    // Skip 5 if went to 4.1
+    } else if (current_step.value === 4.1) {
+        current_step.value = 6
 
     // General increase
     } else if (current_step.value < 9) {
