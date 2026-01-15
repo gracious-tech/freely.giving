@@ -115,22 +115,25 @@
                 button.btn.back(@click="go_back") Back
                 button.btn.cont(@click="next_step") Continue
 
-        section.section(v-else-if="current_step === 7" :key="7")
+        section.section.seven(v-else-if="current_step === 7" :key="7")
             .content
                 p There's a few ways we can test this…
+
                 h3 Are passages being applied consistently?
-                p Is it clear why such passages couldn't be used to justify charging for entry to church?
+                p Is it clear from Scripture why teaching can be sold, but not Sunday sermons?
                 .options.horizontal
                     button.option(@click="consistency = 'yes'" :class="consistency === 'yes' ? 'selected' : ''") Yes
                     button.option(@click="consistency = 'maybe'" :class="consistency === 'maybe' ? 'selected' : ''") Maybe
                     button.option(@click="consistency = 'no'" :class="consistency === 'no' ? 'selected' : ''") No
+
                 h3 Would the early church have done this?
                 p Would Paul have been ok if Timothy was charging for his teaching?
                 .options.horizontal
                     button.option(@click="early_church = 'yes'" :class="early_church === 'yes' ? 'selected' : ''") Yes
                     button.option(@click="early_church = 'maybe'" :class="early_church === 'maybe' ? 'selected' : ''") Maybe
                     button.option(@click="early_church = 'no'" :class="early_church === 'no' ? 'selected' : ''") No
-                h3 Is charging for teaching compatible with the following verses?
+
+                h3 Is charging for teaching compatible with the following passages?
                 p Micah condemned Israel because "her priests teach for a price" (Micah 3:11)
                 p Jesus declared that the disciples' preaching must be freely given (Matt 10:8)
                 p Paul condemned those who peddle (sell) "the word of God" (2 Cor 2:17)
@@ -191,6 +194,7 @@
                 p.final-body The Lord Jesus was greatly upset when the temple was turned into a marketplace (John 2:16). We should, therefore, carefully consider whether we've done the same for ministry today.
             .controls
                 button.btn.back(@click="go_back") Back
+                button.btn.cont Learn more
 
 </template>
 
@@ -732,5 +736,10 @@ img
     &.church
         max-width: 250px
         margin: 0 auto
+
+// Section-specific
+
+.seven h3
+    margin-top: 36px
 
 </style>
