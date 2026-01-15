@@ -117,9 +117,9 @@
 
         section.section(v-else-if="current_step === 7" :key="7")
             .content
-                h2 There's a few ways we can test this…
-                h3 Are the verses being applied consistently?
-                p Is it clear from Scripture why these verses can be used to justify charging for teaching, but not for a church service?
+                p There's a few ways we can test this…
+                h3 Are passages being applied consistently?
+                p Is it clear why such passages couldn't be used to justify charging for entry to church?
                 .options.horizontal
                     button.option(@click="consistency = 'yes'" :class="consistency === 'yes' ? 'selected' : ''") Yes
                     button.option(@click="consistency = 'maybe'" :class="consistency === 'maybe' ? 'selected' : ''") Maybe
