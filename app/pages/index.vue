@@ -57,8 +57,8 @@
 
         section.section(v-else-if="current_step === 4" :key="4")
             .content
-                h2 Let's now consider some other examples.
-                p Which of the following would be ok to charge money for?
+                p Let's now consider some other examples.
+                h2 Which of the following would be ok to charge money for?
                 .column-labels
                     span.label-left
                         | Can't charge
@@ -85,8 +85,8 @@
 
         section.section(v-else-if="current_step === 5" :key="5")
             .content
-                h2 You've chosen some forms of ministry as being ok to charge money for
-                p Which of these verses do you believe justifies this?
+                p You've chosen some forms of ministry as being ok to charge money for.
+                h2 Which of these verses do you believe justifies this?
                 .options
                     button.option(@click="toggle_item(justifying_verses, 'luke_10_7')" :class="justifying_verses.includes('luke_10_7') ? 'selected' : ''") "The worker is worthy of his wages" (Luke 10:7)
                     button.option(@click="toggle_item(justifying_verses, '1_tim_5_18')" :class="justifying_verses.includes('1_tim_5_18') ? 'selected' : ''") "Do not muzzle an ox while it is treading out the grain" (1 Tim 5:18)
@@ -147,9 +147,8 @@
 
         section.section(v-else-if="current_step === 8" :key="8")
             .content
-                h2 So how do all these things fit together without contradiction?
-                p
-                    strong Both Jesus and Paul taught that "ministry should be supported, not sold."
+                p So how do all these things fit together without contradiction?
+                h2 Both Jesus and Paul taught that "ministry should be supported, not sold."
                 .table-section
                     h3 Jesus
                     h3 Paul
@@ -319,6 +318,11 @@ function toggle_item(arr: string[], item: string) {
 </script>
 
 <style scoped lang="sass">
+
+
+h2
+    font-size: 20px
+
 .quiz-container
     height: 100vh
     height: 100dvh
