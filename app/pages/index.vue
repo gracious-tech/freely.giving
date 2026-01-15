@@ -316,10 +316,10 @@ function toggle_item(arr: string[], item: string) {
 
 <style scoped lang="sass">
 .quiz-container
+    height: 100dvh
     height: 100vh
     display: flex
     flex-direction: column
-    background: linear-gradient(135deg, #ff9a9e 0%, #fbc2eb 50%, #667eea 100%)
     color: #111
     padding: 12px
 
@@ -352,7 +352,7 @@ transition
     display: flex
     flex-direction: column
     justify-content: space-between
-    padding: 32px 24px
+    padding: 12px
     min-height: 500px
     width: 100%
     max-width: 640px
@@ -367,6 +367,7 @@ transition
 .content
     text-align: center
     overflow: auto
+    padding-bottom: 24px
 
     &.hero
         h1
@@ -378,7 +379,8 @@ transition
         .hero-subtitle
             font-size: 40px
             line-height: 1.2
-            margin-bottom: 48px
+            margin-top: 0
+            margin-bottom: 24px
             font-weight: bold
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)
             -webkit-background-clip: text
@@ -417,7 +419,8 @@ transition
 .controls
     display: flex
     justify-content: space-between
-    padding-top: 48px
+    padding-top: 12px
+    border-top: 1px solid #0003
 
 .disclaimer
     font-size: 14px
