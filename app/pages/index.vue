@@ -30,6 +30,23 @@
                 button.btn.back(@click="go_back") Back
                 button.btn.cont(@click="next_step" :disabled="!funding_churches") Continue
 
+        section.section(v-else-if="current_step === 1.1 || current_step === 2.1" key="no_funding")
+            .content
+                h2 Scripture is clear on the appropriateness of funding ministry
+                .text
+                    p Paul received financial support from churches (Phil 4:18) and instructed believers to financially support elders/pastors (1 Tim 5:17-18).
+                    p Go back if you'd like to change your answer, or otherwise see this article on #[a(href='https://sellingjesus.org/articles/paying-pastors' target='_blank') why pastors should be paid].
+            .controls
+                button.btn.back(@click="go_back") Back
+
+        section.section(v-else-if="current_step === 1.2 || current_step === 2.2" key="sell_gospel")
+            .content
+                h2 Charging for access to the gospel is a sin
+                .text
+                    p Simon the sorcerer thought the power of the Holy Spirit could be bought and sold, and was rebuked for it (Acts 8:9-24). Please reconsider your answer.
+            .controls
+                button.btn.back(@click="go_back") Back
+
         section.section(v-else-if="current_step === 2" :key="2")
             .content
                 h2 How should missionaries be funded?
@@ -184,9 +201,9 @@
             .content
                 p.final-intro So you probably still agree that some forms of ministry
                     br
-                    em "should be supported, not sold."
+                    strong "should be supported, not sold."
                 h2.final-question But to what degree?
-                p.final-body We should not just do what is right in our own eyes, but test everything against Scripture. The weight of scripture points to it not just being inappropriate to charge for the basics of the faith, but to charge for
+                p.final-body We should not just do what is right in our own eyes, but test everything against Scripture. There are no passages that suggest it is only the basics of the faith that can't be sold. Rather, Scripture points to it being wrong to charge for
                     |
                     |
                     em any form of ministry.
@@ -222,8 +239,22 @@ const items_yes = ref<string[]>([])
 const all_items = ['evangelism', 'baptism', 'communion', 'ebooks', 'prayer', 'worship_songs', 'conference_talks', 'bible_study', 'youth_group']
 
 function next_step() {
-    if (current_step.value < 9) {
-        transition_direction.value = 'forward'
+    transition_direction.value = 'forward'
+
+    // Bad answers for 1
+    if (current_step.value === 1 && funding_churches.value === 'no') {
+        current_step.value = 1.1
+    } else if (current_step.value === 1 && funding_churches.value === 'charge') {
+        current_step.value = 1.2
+
+    // Bad answers for 2
+    } else if (current_step.value === 2 && funding_missionaries.value === 'no') {
+        current_step.value = 2.1
+    } else if (current_step.value === 2 && funding_missionaries.value === 'charge') {
+        current_step.value = 2.2
+
+    // General increase
+    } else if (current_step.value < 9) {
         current_step.value++
     }
 }
@@ -231,7 +262,12 @@ function next_step() {
 function go_back() {
     if (current_step.value > 0) {
         transition_direction.value = 'backward'
-        current_step.value--
+        // If on a decimal step (e.g., 1.1, 2.3), go back to the base step (e.g., 1, 2)
+        if (current_step.value % 1 !== 0) {
+            current_step.value = Math.floor(current_step.value)
+        } else {
+            current_step.value--
+        }
     }
 }
 
@@ -322,6 +358,12 @@ function toggle_item(arr: string[], item: string) {
 
 h2
     font-size: 20px
+
+.content .text
+    font-size: 1rem
+    line-height: 1.8
+    margin-bottom: 1rem
+    text-align: left
 
 .quiz-container
     height: 100vh
