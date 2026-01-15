@@ -324,12 +324,15 @@ function toggle_item(arr: string[], item: string) {
     height: 100vh
     display: flex
     flex-direction: column
+    align-items: center
     color: #111
     padding: 12px
 
 .top-bar
     display: flex
-    justify-items: space-between
+    width: 100%
+    max-width: 640px
+    justify-content: space-between
     overflow-x: auto
     padding: 8px 16px
     border-radius: 12px
@@ -339,10 +342,6 @@ function toggle_item(arr: string[], item: string) {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3)
     font-size: 12px
     color: #333
-    flex-shrink: 0
-
-    .left
-        flex-grow: 1
 
 transition
     flex: 1
@@ -356,17 +355,18 @@ transition
     display: flex
     flex-direction: column
     justify-content: space-between
-    padding: 12px
-    min-height: 500px
+    padding: 16px
     width: 100%
     max-width: 640px
-    margin: 24px auto 0 auto
+    margin-top: 24px
     background: white
     border-radius: 16px
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1)
 
     @media (max-width: 768px)
         margin-top: 0
+        flex-grow: 1
+        height: 0
 
 .content
     text-align: center
