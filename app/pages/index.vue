@@ -114,9 +114,9 @@
                 p You've chosen some forms of ministry as being ok to charge money for.
                 h2 Which of these verses do you believe justifies this?
                 .options
-                    button.option(@click="toggle_item(justifying_verses, 'luke_10_7')" :class="justifying_verses.includes('luke_10_7') ? 'selected' : ''") "The worker is worthy of his wages" (Luke 10:7)
-                    button.option(@click="toggle_item(justifying_verses, '1_tim_5_18')" :class="justifying_verses.includes('1_tim_5_18') ? 'selected' : ''") "Do not muzzle an ox while it is treading out the grain" (1 Tim 5:18)
-                    button.option(@click="toggle_item(justifying_verses, '1_cor_9_14')" :class="justifying_verses.includes('1_cor_9_14') ? 'selected' : ''") "The Lord has prescribed that those who preach the gospel should receive their living from the gospel" (1 Cor 9:14)
+                    button.option(@click="toggle_item(justifying_verses, 'luke_10_7')" :class="justifying_verses.includes('luke_10_7') ? 'selected' : ''") “The worker is worthy of his wages” (Luke 10:7)
+                    button.option(@click="toggle_item(justifying_verses, '1_tim_5_18')" :class="justifying_verses.includes('1_tim_5_18') ? 'selected' : ''") “Do not muzzle an ox while it is treading out the grain” (1 Tim 5:18)
+                    button.option(@click="toggle_item(justifying_verses, '1_cor_9_14')" :class="justifying_verses.includes('1_cor_9_14') ? 'selected' : ''") “The Lord has prescribed that those who preach the gospel should receive their living from the gospel” (1 Cor 9:14)
                     button.option(@click="toggle_item(justifying_verses, 'other')" :class="justifying_verses.includes('other') ? 'selected' : ''") Other
             .controls
                 button.btn.back(@click="go_back") Back
@@ -160,9 +160,9 @@
                     button.option(@click="early_church = 'no'" :class="early_church === 'no' ? 'selected' : ''") No
 
                 h3 Is charging for teaching compatible with the following passages?
-                p Micah condemned Israel because "her priests teach for a price" (Micah 3:11)
+                p Micah condemned Israel because “her priests teach for a price” (Micah 3:11)
                 p Jesus declared that the disciples' preaching must be freely given (Matt 10:8)
-                p Paul condemned those who peddle (sell) "the word of God" (2 Cor 2:17)
+                p Paul condemned those who peddle (sell) “the word of God” (2 Cor 2:17)
                 .options.horizontal
                     button.option(@click="scripture_compatible = 'yes'" :class="scripture_compatible === 'yes' ? 'selected' : ''") Yes
                     button.option(@click="scripture_compatible = 'maybe'" :class="scripture_compatible === 'maybe' ? 'selected' : ''") Maybe
@@ -174,13 +174,13 @@
         section.section(v-else-if="current_step === 8" :key="8")
             .content
                 p So how do all these things fit together without contradiction?
-                h2 Both Jesus and Paul taught that "ministry should be supported, not sold."
+                h2 Both Jesus and Paul taught that “ministry should be supported, not sold.”
                 .table-section
                     h3 Jesus
                     h3 Paul
                     .table-item
                         strong Ministry should be free.
-                        p Jesus told his disciples to "freely give" their ministry.
+                        p Jesus told his disciples to “freely give” their ministry.
                         p.verse-ref (Matt 10:8)
                     .table-item
                         strong Ministry should be free.
@@ -188,11 +188,11 @@
                         p.verse-ref (1 Cor 9:18, 11:1)
                     .table-item
                         strong It should be supported,
-                        p He taught them that "the worker is worthy of his wages"...
+                        p He taught them that “the worker is worthy of his wages”...
                         p.verse-ref (Luke 10:7)
                     .table-item
                         strong It should be supported,
-                        p He taught that ministers should "receive their living from the gospel"...
+                        p He taught that ministers should “receive their living from the gospel”...
                         p.verse-ref (1 Cor 9:14)
                     .table-item
                         strong but through donations, not sales.
@@ -210,7 +210,8 @@
             .content
                 p.final-intro So you probably still agree that some forms of ministry
                     br
-                    strong "should be supported, not sold."
+                    strong
+                        em “should be supported, not sold.”
                 h2.final-question But to what degree?
                 p.final-body We should not just do what is right in our own eyes, but test everything against Scripture. There are no passages that suggest it is only the basics of the faith that can't be sold. Rather, Scripture points to it being wrong to charge for
                     |
