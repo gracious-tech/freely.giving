@@ -834,9 +834,8 @@ img
 
 .card
     display: flex
-    align-items: flex-start
-    gap: 12px
-    padding: 12px
+    align-items: stretch
+    overflow: hidden
     border-radius: 8px
     background: #fef1ff
     border: 1px solid #ddd
@@ -847,15 +846,16 @@ img
         box-shadow: 0 6px 18px rgba(0,0,0,0.08)
 
     img
-        width: 72px
-        height: 72px
+        width: 96px
+        height: auto
         object-fit: cover
-        border-radius: 8px
         flex-shrink: 0
+        border-radius: 0
 
 .card-body
     display: flex
     flex-direction: column
+    padding: 12px
 
     h3
         margin: 0 0 6px 0
