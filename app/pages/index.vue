@@ -5,7 +5,7 @@
     .top-bar(v-if="current_step > 0")
         .left
         .right
-            span {{ current_step }} / 9
+            span {{ current_step }} / 10
 
     transition(:name="`slide-${transition_direction}`" mode="out-in")
         section.section(v-if="current_step === 0" :key="0")
@@ -222,7 +222,14 @@
                 p.final-body The Lord Jesus was greatly upset when the temple was turned into a marketplace (John 2:16). We should, therefore, carefully consider whether we've done the same for ministry today.
             .controls
                 button.btn.back(@click="go_back") Back
-                button.btn.cont Learn more
+                button.btn.cont(@click="next_step") Learn more
+
+        section.section(v-else-if="current_step === 10" :key="10")
+            .content
+                h2 Where to from here?
+
+            .controls
+                button.btn.back(@click="go_back") Back
 
 </template>
 
@@ -274,7 +281,7 @@ function next_step() {
         current_step.value = 6
 
     // General increase
-    } else if (current_step.value < 9) {
+    } else if (current_step.value < 10) {
         current_step.value++
     }
 }
