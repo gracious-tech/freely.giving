@@ -227,7 +227,22 @@
         section.section(v-else-if="current_step === 10" :key="10")
             .content
                 h2 Where to from here?
-
+                .cards
+                    a.card(href='https://sellingjesus.org' target='_blank')
+                        img(src='../assets/tract_church.jpg')
+                        .card-body
+                            h3 Why this matters
+                            p Watch a short video on how the commercialization of ministry impacts all believers, and especially the most needy.
+                    a.card(href='https://sellingjesus.org' target='_blank')
+                        img(src='../assets/tract_plant.jpg')
+                        .card-body
+                            h3 Questions and objections
+                            p Covering our interpretation of Scripture and the practical implications of this teaching.
+                    a.card(href='https://sellingjesus.org' target='_blank')
+                        img(src='../assets/tract_gift.jpg')
+                        .card-body
+                            h3 Join the movement
+                            p Learn how to get involved and how to help
             .controls
                 button.btn.back(@click="go_back") Back
 
@@ -378,6 +393,7 @@ function toggle_item(arr: string[], item: string) {
         arr.splice(idx, 1)
     }
 }
+
 </script>
 
 <style scoped lang="sass">
@@ -809,6 +825,45 @@ img
     &.church
         max-width: 250px
         margin: 0 auto
+
+.cards
+    display: flex
+    flex-direction: column
+    gap: 12px
+    margin: 16px 0
+
+.card
+    display: flex
+    align-items: flex-start
+    gap: 12px
+    padding: 12px
+    border-radius: 8px
+    background: #fef1ff
+    border: 1px solid #ddd
+    text-decoration: none
+    color: inherit
+
+    &:hover
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08)
+
+    img
+        width: 72px
+        height: 72px
+        object-fit: cover
+        border-radius: 8px
+        flex-shrink: 0
+
+.card-body
+    display: flex
+    flex-direction: column
+
+    h3
+        margin: 0 0 6px 0
+        font-size: 16px
+
+    p
+        margin: 0
+        color: #555
 
 // Section-specific
 
