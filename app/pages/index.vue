@@ -114,7 +114,7 @@
             .content
                 p You've chosen some forms of ministry as being ok to charge money for.
                 h2 Which verses do you believe justify this?
-                p.disclaimer (1 or more)
+                p.disclaimer (can select multiple)
                 .options
                     button.option(@click="toggle_item(justifying_verses, 'luke_10_7')" :class="justifying_verses.includes('luke_10_7') ? 'selected' : ''") “The worker is worthy of his wages” (Luke 10:7)
                     button.option(@click="toggle_item(justifying_verses, '1_tim_5_18')" :class="justifying_verses.includes('1_tim_5_18') ? 'selected' : ''") “Do not muzzle an ox while it is treading out the grain” (1 Tim 5:18)
@@ -841,6 +841,7 @@ img
     border: 1px solid #ddd
     text-decoration: none
     color: inherit
+    text-align: left
 
     &:hover
         box-shadow: 0 6px 18px rgba(0,0,0,0.08)
