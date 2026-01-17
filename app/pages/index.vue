@@ -1,11 +1,19 @@
 
 <template lang="pug">
 
-.quiz-container
-    .top-bar(v-if="current_step > 0")
+.quiz-container(@click="menu_open = false")
+    .top-bar
         .left
-        .right
-            span {{ current_step }} / 10
+            .menu(@click.stop)
+                button.menu-btn(@click="menu_open = !menu_open")
+                    svg(viewBox="0 -960 960 960")
+                        path(d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z")
+                .menu-dropdown(v-if="menu_open")
+                    NuxtLink.menu-item(to="/why" @click="menu_open = false" target="_blank") Why this matters
+                    NuxtLink.menu-item(to="/questions" @click="menu_open = false" target="_blank") Questions and objections
+                    NuxtLink.menu-item(to="/act" @click="menu_open = false" target="_blank") Join the movement
+                    NuxtLink.menu-item(to="/about" @click="menu_open = false" target="_blank") About
+        .right(v-if="current_step > 0") {{ current_step }} / 10
 
     transition(:name="`slide-${transition_direction}`" mode="out-in")
         section.section(v-if="current_step === 0" :key="0")
@@ -253,6 +261,7 @@ import { ref } from 'vue'
 
 const current_step = ref(0)
 const transition_direction = ref('forward')
+const menu_open = ref(false)
 
 // Single answer questions
 const funding_churches = ref('')
@@ -422,8 +431,8 @@ h2
     width: 100%
     max-width: 640px
     justify-content: space-between
-    overflow-x: auto
-    padding: 8px 16px
+    align-items: center
+    padding: 4px 8px
     border-radius: 12px
     margin-bottom: 12px
     background: rgba(255, 255, 255, 0.5)
@@ -431,6 +440,72 @@ h2
     border-bottom: 1px solid rgba(255, 255, 255, 0.3)
     font-size: 12px
     color: #333
+
+    .right
+        padding-right: 8px
+        font-weight: bold
+        color: #0006
+
+.menu
+    position: relative
+
+.menu-btn
+    display: flex
+    align-items: center
+    gap: 6px
+    padding: 8px
+    background: transparent
+    border: none
+    cursor: pointer
+    font-size: 14px
+    color: #0006
+    transition: all 0.2s ease
+    border-radius: 6px
+
+    &:hover
+        background: rgba(0, 0, 0, 0.05)
+        color: #333
+
+    .arrow
+        font-size: 10px
+        opacity: 0.7
+
+    svg
+        width: 24px
+        height: 24px
+
+        path
+            fill: #0006
+
+.menu-dropdown
+    position: absolute
+    top: 100%
+    left: 0
+    margin-top: 4px
+    background: white
+    border: 1px solid #ddd
+    border-radius: 8px
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+    min-width: 160px
+    z-index: 100
+
+.menu-item
+    display: block
+    padding: 14px 16px
+    color: #333
+    text-decoration: none
+    font-size: 15px
+    transition: background 0.2s ease
+    min-height: 44px
+
+    &:hover
+        background: #f5f5f5
+
+    &:first-child
+        border-radius: 8px 8px 0 0
+
+    &:last-child
+        border-radius: 0 0 8px 8px
 
 transition
     flex: 1
@@ -501,8 +576,7 @@ transition
     transition: all 0.2s ease
 
     &:hover
-        transform: translateY(-1px)
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+        background: #fef1ff
 
     &.selected
         background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)
@@ -528,7 +602,6 @@ transition
     transition: all 0.2s ease
 
     &:hover:not(:disabled)
-        transform: translateY(-1px)
         box-shadow: 0 4px 12px rgba(240, 147, 251, 0.4)
 
     &.back
@@ -666,8 +739,7 @@ transition
     cursor: pointer
 
     &:hover
-        transform: translateY(-2px)
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15)
+        background: #fef1ff
 
     &.position-no
         margin-left: 0
