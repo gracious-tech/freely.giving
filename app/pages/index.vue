@@ -66,16 +66,14 @@
                 button.btn.back(@click="go_back") Back
                 button.btn.cont(@click="next_step" :disabled="!funding_missionaries") Continue
 
-        section.section(v-else-if="current_step === 3" :key="3")
+        section.section.three(v-else-if="current_step === 3" :key="3")
             .content
                 p There's a common theme for those two examples.
                 .theme-boxes
-                    .theme-box
-                        strong Ministry should be financially supported.
-                        img(src='../assets/tract_plant.jpg')
-                    .theme-box
-                        strong But the ministry itself should not be sold, it should be free.
-                        img(src='../assets/tract_gift.jpg')
+                    strong Ministry should be financially supported.
+                    strong But the ministry itself should not be sold, it should be free.
+                    img(src='../assets/tract_plant.jpg')
+                    img(src='../assets/tract_gift.jpg')
                 p The funding should come through voluntary donations, rather than commercializing the ministry.
             .controls
                 button.btn.back(@click="go_back") Back
@@ -132,21 +130,19 @@
                 button.btn.back(@click="go_back") Back
                 button.btn.cont(@click="next_step") Continue
 
-        section.section(v-else-if="current_step === 6" :key="6")
+        section.section.six(v-else-if="current_step === 6" :key="6")
             .content
                 .theme-boxes
-                    .theme-box
-                        p Many passages affirm that it is appropriate to receive wages for ministry.
-                        img(src='../assets/tract_plant.jpg')
-                        strong Ministry should be supported
-                        svg.tick(viewBox="0 -960 960 960")
-                            path(d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z")
-                    .theme-box
-                        p But do they suggest funding can be obtained by charging for the ministry?
-                        img(src='../assets/tract_gift.jpg')
-                        strong Sold or free
-                        svg.question(viewBox="0 -960 960 960")
-                            path(d="M424-320q0-81 14.5-116.5T500-514q41-36 62.5-62.5T584-637q0-41-27.5-68T480-732q-51 0-77.5 31T365-638l-103-44q21-64 77-111t141-47q105 0 161.5 58.5T698-641q0 50-21.5 85.5T609-475q-49 47-59.5 71.5T539-320H424Zm56 240q-33 0-56.5-23.5T400-160q0-33 23.5-56.5T480-240q33 0 56.5 23.5T560-160q0 33-23.5 56.5T480-80Z")
+                    p Many passages affirm that it is appropriate to receive wages for ministry.
+                    p But do they suggest funding can be obtained by charging for the ministry?
+                    img(src='../assets/tract_plant.jpg')
+                    img(src='../assets/tract_gift.jpg')
+                    strong Ministry should be supported
+                    strong Sold or free
+                    svg.tick(viewBox="0 -960 960 960")
+                        path(d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z")
+                    svg.question(viewBox="0 -960 960 960")
+                        path(d="M424-320q0-81 14.5-116.5T500-514q41-36 62.5-62.5T584-637q0-41-27.5-68T480-732q-51 0-77.5 31T365-638l-103-44q21-64 77-111t141-47q105 0 161.5 58.5T698-641q0 50-21.5 85.5T609-475q-49 47-59.5 71.5T539-320H424Zm56 240q-33 0-56.5-23.5T400-160q0-33 23.5-56.5T480-240q33 0 56.5 23.5T560-160q0 33-23.5 56.5T480-80Z")
             .controls
                 button.btn.back(@click="go_back") Back
                 button.btn.cont(@click="next_step") Continue
@@ -652,11 +648,6 @@ transition
     @media (max-width: 768px)
         grid-template-columns: 1fr
 
-.theme-box
-    display: flex
-    flex-direction: column
-    align-items: center
-
     strong
         display: block
         margin-bottom: 16px
@@ -676,6 +667,36 @@ transition
             fill: green
         &.question path
             fill: orange
+
+.three .theme-boxes
+    @media (max-width: 768px)
+        strong:nth-of-type(1)
+            order: 1
+        img:nth-of-type(1)
+            order: 2
+        strong:nth-of-type(2)
+            order: 3
+        img:nth-of-type(2)
+            order: 4
+
+.six .theme-boxes
+    @media (max-width: 768px)
+        p:nth-of-type(1)
+            order: 1
+        img:nth-of-type(1)
+            order: 2
+        strong:nth-of-type(1)
+            order: 3
+        svg:nth-of-type(1)
+            order: 4
+        p:nth-of-type(2)
+            order: 5
+        img:nth-of-type(2)
+            order: 6
+        strong:nth-of-type(2)
+            order: 7
+        svg:nth-of-type(2)
+            order: 8
 
 .column-labels
     display: flex
