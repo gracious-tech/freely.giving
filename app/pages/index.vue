@@ -642,8 +642,8 @@ transition
 .theme-boxes
     display: grid
     grid-template-columns: repeat(2, 1fr)
-    gap: 24px
-    margin-top: 24px
+    column-gap: 24px
+    justify-items: center
 
     @media (max-width: 768px)
         grid-template-columns: 1fr
@@ -662,6 +662,7 @@ transition
     svg
         width: 48px
         height: 48px
+        margin-bottom: 24px
 
         &.tick path
             fill: green
@@ -669,6 +670,8 @@ transition
             fill: orange
 
 .three .theme-boxes
+    margin: 24px 0
+
     @media (max-width: 768px)
         strong:nth-of-type(1)
             order: 1
