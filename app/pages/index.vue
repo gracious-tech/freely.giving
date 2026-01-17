@@ -232,17 +232,17 @@
             .content
                 h2 Where to from here?
                 .cards
-                    a.card(href='https://sellingjesus.org' target='_blank')
+                    a.card(href='/why' target='_blank')
                         img(src='../assets/tract_church.jpg')
                         .card-body
                             h3 Why this matters
                             p Watch a short video on how the commercialization of ministry impacts all believers, and especially the most needy.
-                    a.card(href='https://sellingjesus.org' target='_blank')
+                    a.card(href='/questions' target='_blank')
                         img(src='../assets/tract_plant.jpg')
                         .card-body
                             h3 Questions and objections
                             p Covering our interpretation of Scripture and the practical implications of this teaching.
-                    a.card(href='https://sellingjesus.org' target='_blank')
+                    a.card(href='/act' target='_blank')
                         img(src='../assets/tract_gift.jpg')
                         .card-body
                             h3 Join the movement
