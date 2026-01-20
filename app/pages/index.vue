@@ -751,8 +751,9 @@ transition
     display: flex
     align-items: center
     gap: 0
-    padding: 12px
-    background: white
+    padding: 0 12px
+    height: 48px
+    background: #dfebed
     border-radius: 8px
     border: 1px solid #ddd
     width: 66.666%
@@ -760,6 +761,7 @@ transition
     margin: 0 auto
     position: relative
     cursor: pointer
+    user-select: none
 
     &:hover
         background: #fef1ff
@@ -787,24 +789,10 @@ transition
         padding: 0 8px
 
 .arrow
-    padding: 12px 8px
-    background: transparent
-    border: none
-    cursor: pointer
+    padding: 0 8px
     font-size: 19px
-    transition: all 0.2s ease
     flex-shrink: 0
     color: #666
-    margin: -12px 0
-
-    &:hover:not(:disabled)
-        color: #333
-        transform: scale(1.2)
-
-    &:disabled
-        opacity: 0
-        cursor: default
-        pointer-events: none
 
     &.left
         margin-left: -12px
