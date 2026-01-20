@@ -22,7 +22,7 @@
                 img.church(src='../assets/tract_church.jpg')
                 p.hero-subtitle Ministry should be free.
                 p.hero-description Answer a few questions to find out.
-                div.disclaimer This is a simple quiz with no data collection. Promise!
+                div.disclaimer (This quiz is for self reflection, no data is collected)
             .controls
                 | &nbsp;
                 button.btn.cont(@click="next_step") Start
@@ -567,7 +567,7 @@ transition
     padding: 14px 19px
     border-radius: 999px
     border: 1px solid #bbb
-    background: white
+    background: #dfebed
     color: #111
     transition: all 0.2s ease
 
@@ -575,8 +575,7 @@ transition
         background: #fef1ff
 
     &.selected
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)
-        color: white
+        background: linear-gradient(170deg, #f8bfff 0%, #babbf9 100%)
         border-color: transparent
 
 .controls
@@ -965,6 +964,6 @@ img
 // Section-specific
 
 .seven h3
-    margin-top: 36px
+    margin-top: 48px
 
 </style>
