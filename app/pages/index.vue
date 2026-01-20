@@ -152,27 +152,27 @@
                 p There's a few ways we can test this…
 
                 h3 Are passages being applied consistently?
-                p Is it clear from Scripture why teaching can be sold, but not Sunday sermons?
+                p Is it clear from Scripture why only some things can be sold and not others?
                 .options.horizontal
-                    button.option(@click="consistency = 'yes'" :class="consistency === 'yes' ? 'selected' : ''") Yes
-                    button.option(@click="consistency = 'maybe'" :class="consistency === 'maybe' ? 'selected' : ''") Maybe
-                    button.option(@click="consistency = 'no'" :class="consistency === 'no' ? 'selected' : ''") No
+                    button.option(@click="consistency = 'yes'" :class="consistency === 'yes' ? 'selected' : ''") Yes, Scripture makes it clear
+                    button.option(@click="consistency = 'no'" :class="consistency === 'no' ? 'selected' : ''") No, it's unclear
+                    button.option(@click="consistency = 'maybe'" :class="consistency === 'maybe' ? 'selected' : ''") Unsure
 
                 h3 Would the early church have done this?
                 p Would Paul have been ok if Timothy was charging for his teaching?
                 .options.horizontal
-                    button.option(@click="early_church = 'yes'" :class="early_church === 'yes' ? 'selected' : ''") Yes
-                    button.option(@click="early_church = 'maybe'" :class="early_church === 'maybe' ? 'selected' : ''") Maybe
-                    button.option(@click="early_church = 'no'" :class="early_church === 'no' ? 'selected' : ''") No
+                    button.option(@click="early_church = 'yes'" :class="early_church === 'yes' ? 'selected' : ''") Yes, it would have been fine
+                    button.option(@click="early_church = 'no'" :class="early_church === 'no' ? 'selected' : ''") No, it would have been opposed
+                    button.option(@click="early_church = 'maybe'" :class="early_church === 'maybe' ? 'selected' : ''") Unsure
 
-                h3 Is charging for teaching compatible with the following passages?
+                h3 Is charging for ministry compatible with the following passages?
                 p Micah condemned Israel because “her priests teach for a price” (Micah 3:11)
-                p Jesus declared that the disciples' preaching must be freely given (Matt 10:8)
+                p Jesus told his disciples to “freely give” their ministry (Matt 10:8)
                 p Paul condemned those who peddle (sell) “the word of God” (2 Cor 2:17)
                 .options.horizontal
-                    button.option(@click="scripture_compatible = 'yes'" :class="scripture_compatible === 'yes' ? 'selected' : ''") Yes
-                    button.option(@click="scripture_compatible = 'maybe'" :class="scripture_compatible === 'maybe' ? 'selected' : ''") Maybe
-                    button.option(@click="scripture_compatible = 'no'" :class="scripture_compatible === 'no' ? 'selected' : ''") No
+                    button.option(@click="scripture_compatible = 'yes'" :class="scripture_compatible === 'yes' ? 'selected' : ''") Yes, no issues
+                    button.option(@click="scripture_compatible = 'no'" :class="scripture_compatible === 'no' ? 'selected' : ''") No, they contradict it
+                    button.option(@click="scripture_compatible = 'maybe'" :class="scripture_compatible === 'maybe' ? 'selected' : ''") Unsure
             .controls
                 button.btn.back(@click="go_back") Back
                 button.btn.cont(@click="next_step" :disabled="!(consistency && early_church && scripture_compatible)") Continue
