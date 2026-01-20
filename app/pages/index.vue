@@ -100,9 +100,9 @@
                             :class="get_item_position(item)"
                             @click="handle_item_click(item, $event)"
                         )
-                            button.arrow.left(v-if="get_item_value(item) === 'maybe'" @click.stop="move_item_left(item)") ←
+                            .arrow.left(v-if="get_item_value(item) === 'maybe'" @click.stop="move_item_left(item)") ←
                             span {{ format_item_label(item) }}
-                            button.arrow.right(v-if="get_item_value(item) === 'maybe'" @click.stop="move_item_right(item)") →
+                            .arrow.right(v-if="get_item_value(item) === 'maybe'" @click.stop="move_item_right(item)") →
             .controls
                 button.btn.back(@click="go_back") Back
                 button.btn.cont(@click="next_step") Continue
