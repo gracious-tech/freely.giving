@@ -74,7 +74,7 @@
                     strong But the ministry itself should not be sold, it should be free.
                     img(src='../assets/tract_plant.jpg')
                     img(src='../assets/tract_gift.jpg')
-                p The funding should come through voluntary donations, rather than commercializing the ministry.
+                p The funding should come through voluntary donations, rather than sales.
             .controls
                 button.btn.back(@click="go_back") Back
                 button.btn.cont(@click="next_step") Continue
