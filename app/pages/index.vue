@@ -887,8 +887,11 @@ transition
 .final-question
     font-size: 2rem
     margin: 1.5rem 0
-    color: #764ba2
     font-weight: bold
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    background-clip: text
 
 .final-body
     font-size: 1rem
