@@ -2,7 +2,6 @@
 <template lang="pug">
 
 .home-container
-    GO.about-link.nav-link(to="/about") About
     .hero-section
         .hero-titles
             h1.hero-title Freely giving
@@ -57,6 +56,11 @@
             GO.btn-primary.small(to="/people") People
             GO.btn-primary.small(to="/groups") Groups
 
+    div.about
+        GO.nav-link(to="/about") About
+        GO.facebook(to='https://www.facebook.com/freely.giving.website')
+            img(src="~/assets/icon_facebook.svg" alt="Facebook")
+
     BooksModal(:is_open="selected_resource === 'books'" @close="close_modal")
     VideosModal(:is_open="selected_resource === 'videos'" @close="close_modal")
     ImagesModal(:is_open="selected_resource === 'images'" @close="close_modal")
@@ -96,14 +100,24 @@ onMounted(() => {
     padding: 40px 20px
     position: relative
 
-.about-link
-    position: absolute
-    top: 20px
-    right: 20px
+.about
+    display: flex
+    align-items: center
+    justify-content: center
+    border-top: 1px solid #fff2
+    padding-top: 12px
+    width: 200px
+    margin: 120px auto 0 auto
 
-    @media (max-width: 768px)
-        top: 12px
-        right: 12px
+    .facebook
+        border-radius: 999px
+        padding: 12px
+        line-height: 0
+        &:hover
+            background-color: #fff2
+        img
+            width: 20px
+            height: 20px
 
 .hero-section
     text-align: center
