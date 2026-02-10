@@ -1,0 +1,331 @@
+
+html
+    background-color: #6b3580  // Backup for when body gradient doesn't cover something
+
+body
+    font-family: Roboto, Arial, sans-serif
+    background: linear-gradient(130deg, #7a2832 0%, #6b3580 35%, #1e5d6e 65%, #1d2870 100%)
+    background-size: 200% 200%
+    animation: gradient-shift 15s ease infinite
+    padding-bottom: 30vh
+
+    @media (max-width: 768px)
+        // Make gradient angle more horizontal so change noticable on phone in portrait orientation
+        background: linear-gradient(105deg, #7a2832 0%, #6b3580 35%, #1e5d6e 65%, #1d2870 100%)
+
+    &.page-why
+        // Static gradient to avoid distracting from reading white text
+        animation: none
+        background: linear-gradient(120deg, #7a2832 0%, #6b3580 25%, #1e5d6e 50%, #6b3580 75%, #7a2832 100%)
+
+    &.page-quiz
+        padding-bottom: 0
+
+@keyframes gradient-shift
+    0%
+        background-position: 0% 50%
+    50%
+        background-position: 100% 50%
+    100%
+        background-position: 0% 50%
+
+iframe
+    border: none
+    width: 100%
+    aspect-ratio: 16 / 9
+    border-radius: 12px
+
+button:not([disabled])
+    cursor: pointer
+
+.buttons
+    display: flex
+    flex-wrap: wrap
+    gap: 12px
+
+.nav-link
+    color: rgba(255, 255, 255, 0.8)
+    text-decoration: none
+    font-size: 1rem
+    font-weight: 500
+    padding: 8px 16px
+    border-radius: 8px
+    transition: all 0.3s ease
+
+    @media (max-width: 768px)
+        padding: 6px 12px
+        font-size: 0.9rem
+
+    &:hover
+        color: white
+        background: rgba(255, 255, 255, 0.1)
+
+.btn-primary
+    display: inline-block
+    padding: 16px 40px
+    background: rgba(255, 255, 255, 0.2)
+    backdrop-filter: blur(10px)
+    border: 2px solid rgba(255, 255, 255, 0.5)
+    border-radius: 999px
+    color: white
+    text-decoration: none
+    font-weight: 600
+    font-size: 1.1rem
+    transition: all 0.3s ease
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15)
+
+    &:hover
+        background: rgba(255, 255, 255, 0.3)
+        border-color: rgba(255, 255, 255, 0.6)
+        transform: translateY(-2px)
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2)
+
+    &.small
+        padding: 12px 28px
+        font-size: 1rem
+
+.btn-secondary
+    display: inline-block
+    border: none
+    padding: 12px 32px
+    background: #fff
+    border-radius: 999px
+    color: #1a1a1a
+    text-decoration: none
+    font-weight: 600
+    font-size: 1rem
+    transition: all 0.3s ease
+    box-shadow: 0 4px 15px rgba(232, 232, 208, 0.3)
+
+    @media (max-width: 768px)
+        padding: 6px 16px
+        font-size: 0.9rem
+
+    &:hover
+        background: #eaeac8
+        box-shadow: 0 6px 20px rgba(216, 216, 184, 0.4)
+
+.other-buttons
+    display: flex
+    gap: 24px
+    justify-content: center
+    margin-top: 36px
+
+// Shared content page styles
+.content-page
+    min-height: 100vh
+    padding: 40px 20px 80px
+    position: relative
+
+    @media (max-width: 768px)
+        padding: 20px 12px 60px
+
+.back-link
+    position: absolute
+    top: 20px
+    left: 20px
+    color: rgba(255, 255, 255, 0.8)
+    text-decoration: none
+    font-size: 1.125rem
+    font-weight: 500
+    transition: all 0.3s ease
+    padding: 8px 16px
+    border-radius: 8px
+    display: flex
+    align-items: center
+    gap: 8px
+
+    @media (max-width: 768px)
+        top: 12px
+        left: 12px
+        padding: 6px 12px
+        font-size: 1rem
+
+    :deep(svg)
+        font-size: 1.5rem
+
+        @media (max-width: 768px)
+            font-size: 1.25rem
+
+    &:hover
+        color: white
+        background: rgba(255, 255, 255, 0.1)
+
+.page-header
+    text-align: center
+    padding: 40px 20px 20px
+    max-width: 800px
+    margin: 0 auto
+
+.page-title
+    font-size: clamp(2rem, 6vw, 3rem)
+    font-weight: 700
+    color: white
+    margin: 0
+    line-height: 1.2
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3)
+
+.page-subtitle
+    font-size: 1.25rem
+    font-weight: 400
+    color: rgba(255, 255, 255, 0.9)
+    margin-top: 16px
+    line-height: 1.6
+    max-width: 600px
+    margin-left: auto
+    margin-right: auto
+
+.content-wrapper
+    max-width: 800px
+    margin: 40px auto 0
+    display: flex
+    flex-direction: column
+    gap: 24px
+
+.content-card
+    background: rgba(255, 255, 255, 0.65)
+    backdrop-filter: blur(12px)
+    border: 2px solid rgba(255, 255, 255, 0.5)
+    border-radius: 20px
+    padding: 32px
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15)
+    animation: fade-in 0.6s ease-out
+    animation-fill-mode: both
+
+    &:nth-child(1)
+        animation-delay: 0.1s
+    &:nth-child(2)
+        animation-delay: 0.2s
+    &:nth-child(3)
+        animation-delay: 0.3s
+    &:nth-child(4)
+        animation-delay: 0.4s
+    &:nth-child(5)
+        animation-delay: 0.5s
+    &:nth-child(6)
+        animation-delay: 0.6s
+    &:nth-child(7)
+        animation-delay: 0.7s
+    &:nth-child(8)
+        animation-delay: 0.8s
+    &:nth-child(9)
+        animation-delay: 0.9s
+    &:nth-child(10)
+        animation-delay: 1s
+
+    h2
+        margin: 0 0 20px 0
+        font-size: 1.6rem
+        color: #1a1a1a
+        font-weight: 700
+
+    h3
+        margin: 0 0 12px 0
+        font-size: 1.3rem
+        color: #1a1a1a
+        font-weight: 600
+
+    p
+        margin: 0 0 16px 0
+        font-size: 1.125rem
+        line-height: 1.75
+        color: #2a2a2a
+
+        &:last-child
+            margin-bottom: 0
+
+    a:not(.btn-primary):not(.btn-secondary)
+        color: #a80087
+        text-decoration: none
+        font-weight: 500
+        transition: all 0.2s ease
+
+        &:hover
+            text-decoration: underline
+
+    ul, ol
+        margin: 0 0 16px 0
+        padding-left: 24px
+        color: #2a2a2a
+
+    li
+        font-size: 1.125rem
+        line-height: 1.75
+
+    blockquote
+        font-size: 18px
+        color: #2a2a2a
+        border-left: 2px solid #0003
+        padding-left: 12px
+        line-height: 1.5
+        margin-left: 6px
+
+
+.resource-grid
+    display: grid
+    grid-template-columns: minmax(auto, 200px) 1fr
+    gap: 12px 24px
+    margin-top: 24px
+    align-items: center
+    line-height: 1.3
+
+    @media (max-width: 768px)
+        grid-template-columns: 1fr
+
+    a
+        font-weight: 700
+        font-size: 18px
+
+    div
+        font-size: 16px
+
+
+@media (max-width: 768px)
+    .content-card
+        padding: 24px
+
+        h2
+            font-size: 1.3rem
+
+        h3
+            font-size: 1.2rem
+
+        p, li
+            font-size: 1rem
+
+@media (max-width: 480px)
+    .content-page
+        padding: 20px 16px 60px
+
+    .content-card
+        padding: 20px
+
+@keyframes fade-in
+    from
+        opacity: 0
+        transform: translateY(20px)
+    to
+        opacity: 1
+        transform: translateY(0)
+
+// Media type gradients
+.gradient-books
+    background: linear-gradient(135deg, #4855d9 0%, #a86fbe 100%)
+
+.gradient-videos
+    background: linear-gradient(135deg, #e975b5 0%, #d9453f 100%)
+
+.gradient-images
+    background: linear-gradient(135deg, #7a9520 0%, #e9b535 100%)
+
+.gradient-music
+    background: linear-gradient(135deg, #257a4a 0%, #45c4c4 100%)
+
+.gradient-scripture
+    background: linear-gradient(135deg, #c9557a 0%, #c9a535 100%)
+
+.gradient-software
+    background: linear-gradient(135deg, #30c4b5 0%, #5540d9 100%)
+
+.gradient-other
+    background: linear-gradient(135deg, #55a8a5 0%, #c9578a 100%)
