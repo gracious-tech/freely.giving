@@ -9,9 +9,9 @@
                     svg(viewBox="0 -960 960 960")
                         path(d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z")
                 .menu-dropdown(v-if="menu_open")
-                    GO.menu-item(to="https://sellingjesus.org" @click="menu_open = false") Learn what the Bible says
-                    GO.menu-item(to="https://copy.church" @click="menu_open = false") Learn about copyright
-                    GO.menu-item(to="https://freely.giving" @click="menu_open = false") Browse free resources
+                    GO.menu-item(to="https://sellingjesus.org" @click="menu_open = false") Browse articles and videos
+                    GO.menu-item(to="https://thedoreanprinciple.org/" @click="menu_open = false") Read The Dorean Principle
+                    GO.menu-item(to="https://freely.giving" @click="menu_open = false") See who's freely giving
         .right(v-if="current_step > 0") {{ current_step }} / 10
 
     transition(:name="`slide-${transition_direction}`" mode="out-in")
@@ -245,17 +245,17 @@
                     GO.card(to='https://sellingjesus.org')
                         img(src='https://sellingjesus.org/_assets/icon.png')
                         .card-body
-                            h3 Learn more about what the Bible says
-                            p #[em Selling Jesus] has theological articles and videos on why ministry should be supported, not sold.
-                    GO.card(to='https://copy.church')
-                        img(src='https://copy.church/_assets/icon.png')
+                            h3 Browse a website
+                            p #[em Selling Jesus] has many theological articles and videos on why ministry should be supported, not sold.
+                    GO.card(to='https://thedoreanprinciple.org/')
+                        img(src='assets/icon_dorean.jpg')
                         .card-body
-                            h3 Learn about the issue of copyright
-                            p #[em Let's copy, church] encourages the relinquishing of copyright, and explains the harm it causes.
-                    GO.card(to='/')
+                            h3 Read a book
+                            p #[em The Dorean Principle] explains from Scripture what biblical funding of ministry should look like.
+                    GO.card(to='https://freely.giving')
                         img(src='/icon.png')
                         .card-body
-                            h3 Browse free resources
+                            h3 See who's freely giving
                             p #[em Freely Giving] is a central location for finding free resources and learning how to publish them.
             .controls
                 button.btn.back(@click="go_back") Back
@@ -960,7 +960,7 @@ img
         height: 64px
         object-fit: cover
         flex-shrink: 0
-        border-radius: 0
+        border-radius: 999px
 
 .card-body
     display: flex
