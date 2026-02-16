@@ -21,7 +21,7 @@ useSeoMeta({
     title: "Freely giving the things of God",
     description: "Giving Christian resources, free of cost and copyright, for the sake of the gospel.",
     ogImage: 'https://freely.giving/social.jpg',
-    twitterCard: 'summary_large_image',
+    twitterCard: 'summary',
 })
 
 // Add page slug class to body (client-side only)
