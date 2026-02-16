@@ -589,8 +589,8 @@ transition
         grid-template-columns: repeat(3, 1fr)
 
 .option
-    padding: 14px 19px
-    border-radius: 999px
+    padding: 12px 6px
+    border-radius: 12px
     border: 1px solid #bbb
     background: #dfebed
     color: #111
