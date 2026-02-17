@@ -269,7 +269,7 @@ import { ref } from 'vue'
 definePageMeta({
     title: "Should ministry be free? Take the quiz.",
     description: "Answer a few questions to find out if you do agree that ministry should be free, and to what extent.",
-    image: 'https://freely.giving/social_quiz.jpg',
+    image: 'https://freely.giving/social_quiz2.jpg',
 })
 
 const current_step = ref(0)
