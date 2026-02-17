@@ -41,7 +41,7 @@
 
 <script setup>
 
-useHead({
+definePageMeta({
     title: "About Freely.Giving",
 })
 

@@ -81,7 +81,7 @@
 
 <script setup>
 
-useHead({
+definePageMeta({
     title: "Questions about freely giving Christian resources",
 })
 

@@ -45,7 +45,7 @@
 
 <script setup>
 
-useHead({
+definePageMeta({
     title: "Freely Given",
 })
 

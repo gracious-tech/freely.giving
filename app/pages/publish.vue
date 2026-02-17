@@ -78,7 +78,7 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue'
 
-useHead({
+definePageMeta({
     title: "How to publish free Christian resources",
 })
 

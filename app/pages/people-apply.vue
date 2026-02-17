@@ -63,7 +63,7 @@ definePageMeta({
     path: '/people/apply',
 })
 
-useHead({
+definePageMeta({
     title: "Submit your profile to Freely.Giving",
 })
 

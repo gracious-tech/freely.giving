@@ -266,10 +266,10 @@
 import { ref } from 'vue'
 
 
-useSeoMeta({
+definePageMeta({
     title: "Should ministry be free? Take the quiz.",
     description: "Answer a few questions to find out if you do agree that ministry should be free, and to what extent.",
-    ogImage: 'https://freely.giving/social_quiz.jpg',
+    image: 'https://freely.giving/social_quiz.jpg',
 })
 
 const current_step = ref(0)

@@ -45,7 +45,7 @@
 
 <script setup>
 
-useHead({
+definePageMeta({
     title: "Groups committed to freely giving Christian resources",
 })
 

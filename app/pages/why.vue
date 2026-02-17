@@ -99,10 +99,10 @@ nav.nav-back
 <script lang='ts' setup>
 
 
-useSeoMeta({
+definePageMeta({
     title: "Why freely give Christian resources?",
     description: "Let's make it the norm to freely give Christian resources, for the sake of the gospel.",
-    ogImage: 'https://freely.giving/social_why.jpg',
+    image: 'https://freely.giving/social_why.jpg',
 })
 
 </script>

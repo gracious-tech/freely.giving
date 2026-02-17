@@ -51,7 +51,7 @@
 
 <script setup>
 
-useHead({
+definePageMeta({
     title: "How to fund free Christian resources",
 })
 

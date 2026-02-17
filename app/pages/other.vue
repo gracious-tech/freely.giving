@@ -50,7 +50,7 @@
 
 <script setup>
 
-useHead({
+definePageMeta({
     title: "Other Free Christian resources",
 })
 

@@ -17,10 +17,14 @@ useHead({
 })
 
 // Global SEO meta tags
+const default_title = "Freely giving the things of God"
+const default_desc = "Giving Christian resources, free of cost and copyright, for the sake of the gospel."
 useSeoMeta({
-    title: "Freely giving the things of God",
-    description: "Giving Christian resources, free of cost and copyright, for the sake of the gospel.",
-    ogImage: 'https://freely.giving/social.jpg',
+    title: () => route.meta.title || default_title,
+    ogTitle: () => route.meta.title || default_title,
+    description: () => route.meta.description || default_desc,
+    ogDescription: () => route.meta.description || default_desc,
+    ogImage: () => route.meta.image || 'https://freely.giving/social.jpg',
     twitterCard: 'summary',
 })
 

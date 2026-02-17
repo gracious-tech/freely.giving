@@ -32,7 +32,7 @@
 
 <script setup>
 
-useHead({
+definePageMeta({
     title: "Freely Given Christian Music",
 })
 

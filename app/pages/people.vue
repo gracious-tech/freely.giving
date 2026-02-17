@@ -26,7 +26,7 @@ import {onMounted} from 'vue'
 
 import {people_ids_randomized, randomize_people} from '@/components/people'
 
-useHead({
+definePageMeta({
     title: "People freely giving Christian resources",
 })
 
