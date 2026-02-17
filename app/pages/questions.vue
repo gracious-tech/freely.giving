@@ -24,7 +24,7 @@
                 li Sermons and conference talks
                 li Books
                 li Worship music
-            p #[strong This doesn't mean printed books need to be free.] If resources are free to download, and free of copyright restrictions, then the spiritual content has been freely given. It's fine to charge money for other versions of such content, such as printed books.
+            p #[strong This doesn't mean printed books need to be free.] What matters is that people can access the teaching, which can be done by offering the ebook for free. Giving away printed books can also be valuable, especially for evangelism, but it isn’t expected.
 
             p #[strong This also doesn't mean everything “Christian” needs to be free.] This only concerns things that are #[em primarily] spiritual in nature. This #[strong doesn't] include:
             ul
