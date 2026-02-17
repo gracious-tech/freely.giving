@@ -61,9 +61,6 @@
 
 definePageMeta({
     path: '/people/apply',
-})
-
-definePageMeta({
     title: "Submit your profile to Freely.Giving",
 })
 

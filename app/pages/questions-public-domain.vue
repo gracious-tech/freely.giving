@@ -21,9 +21,6 @@
 
 definePageMeta({
     path: '/questions/public-domain',
-})
-
-definePageMeta({
     title: "Dedicating Christian resources to the public domain",
 })
 
