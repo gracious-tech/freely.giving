@@ -21,7 +21,7 @@
                 img.church(src='../assets/tract_church.jpg')
                 p.hero-subtitle Ministry should be free.
                 p.hero-description Answer a few questions to find out.
-                div.disclaimer (This quiz is for self reflection, no data is collected)
+                div.disclaimer (This quiz is for self reflection; no data is collected)
             .controls
                 | &nbsp;
                 button.btn.cont(@click="next_step") Start
@@ -73,7 +73,7 @@
                     strong But the ministry itself should not be sold, it should be free.
                     img(src='../assets/tract_plant.jpg')
                     img(src='../assets/tract_gift.jpg')
-                p The funding should come through voluntary donations, rather than sales.
+                p The funding should come through voluntary donations rather than sales.
             .controls
                 button.btn.back(@click="go_back") Back
                 button.btn.cont(@click="next_step") Continue
@@ -189,7 +189,7 @@
         section.section(v-else-if="current_step === 8" :key="8")
             .content
                 p So how do all these things fit together without contradiction?
-                h2 Both Jesus and Paul taught that<br>“ministry should be supported, not sold.”
+                h2 Both Jesus and Paul taught that<br> #[em ministry should be supported, not sold.]
                 .table-section
                     h3 Jesus
                     h3 Paul
@@ -227,7 +227,7 @@
                 p.final-intro So you probably still agree that some forms of ministry
                     br
                     strong
-                        em “should be supported, not sold.”
+                        em should be supported, not sold.
                 h2.final-question But to what degree?
                 p.final-body We should not just do what is right in our own eyes, but test everything against Scripture. There are no passages that suggest it is only the basics of the faith that can't be sold. Rather, Scripture points to it being wrong to charge for
                     |
