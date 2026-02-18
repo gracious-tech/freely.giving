@@ -16,9 +16,9 @@
             p Places you can find like-minded people who believe in freely giving resources.
             .resource-grid
                 GO(to='https://discord.gg/TwZUsT2nJ7') Dorean Discussions
-                div A Discord server for discussing freely giving according to the dorean principle.
+                div A Discord server for discussing freely giving with a focus on the theology of freely giving.
                 GO(to='https://discord.com/invite/auJb4H9ezx') Open Bible Technology Community
-                div A Discord server for discussing openly licensed Bible software. Note: This community favors open licensing over the public domain (what this site recommends).
+                div A Discord server for discussing openly licensed Bible software. Note: This community favors open licensing over the public domain (we recommend the public domain).
 
         .content-card
             h2 Organizations
