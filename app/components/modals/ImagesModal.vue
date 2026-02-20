@@ -10,9 +10,15 @@ ResourceModal(
 )
     CollectionLink(
         url="http://freebibleimages.org/"
-        description="Bible-related images from various contributors"
+        description="Bible-related images"
         badge="some restricted"
     ) Free Bible Images
+
+    CollectionLink(
+        url="https://openverse.org/"
+        description="General images for complementing Christian resources"
+        badge="some restricted"
+    ) Openverse
 
 </template>
 
