@@ -16,14 +16,14 @@ nav.nav-back
             .icon.custom-icon
                 img(src="~/assets/icon_church.svg")
             .text
-                p All Christians know you shouldn’t have to pay to enter a church or hear the gospel from a missionary, even though these things require significant labor to provide.
+                p All Christians know you shouldn’t have to #[strong pay] to enter a church or hear the gospel from a missionary.
 
         section.section.icon-right
             .section-number
                 span.number 2
                 span.total /8
             .text
-                p Pastors and missionaries are still worthy of wages, but they only receive these through donations to ensure the ministry stays free.
+                p Pastors and missionaries are still worthy of wages, but they only receive these through #[strong donations] to ensure the ministry stays free.
             .icon
                 Icon(name="streamline-freehand:donation-charity-donate-box")
 
@@ -35,15 +35,15 @@ nav.nav-back
                 Icon(name="streamline-freehand:tag-sale-price")
             .text
                 p However, this isn't the case for all forms of ministry. Many things, such as books, worship music, and conference talks, rely on sales rather than donations.
-                p Most authors do this with the best of intentions, believing it to be the most effective way to fund ministry. However, there are downsides.
+                p Most authors do this with the best of intentions, believing it to be the most effective way to fund ministry. However, there are #[strong downsides].
 
         section.section.icon-right
             .section-number
                 span.number 4
                 span.total /8
             .text
-                p These downsides are evident when imagining if churches were to rely on sales rather than donations. Such as by charging entrance fees.
-                p The poor would be disadvantaged, and would have to ask for special permission to enter for free. Those yet to believe might be put off by the cost, and even long-time Christians may reduce attendance to save some money.
+                p Imagine if #[strong churches] were to rely on sales, such as by charging entrance fees.
+                p The poor would be disadvantaged, and would need special permission to enter for free. Those yet to believe might be put off by the cost, and even long-time Christians may reduce attendance to save some money.
             .icon
                 Icon(name="streamline-freehand:accounting-invoice")
 
@@ -54,14 +54,14 @@ nav.nav-back
             .icon
                 Icon(name="streamline-freehand:laptop-action-lock")
             .text
-                p That's unfortunately what is happening with many Christian resources today. The poor are disadvantaged and the potential impact of resources is reduced by financial barriers.
+                p That's unfortunately what is happening with many Christian resources #[strong today]. The poor are disadvantaged and the potential impact of resources is reduced by financial barriers.
 
         section.section.icon-right
             .section-number
                 span.number 6
                 span.total /8
             .text
-                p Worse still, the least reached are most affected. They can't afford the abundant Christian resources the West enjoys, and don't have permission to translate them due to copyright restrictions.
+                p Worse still, #[strong the least reached] are most affected. They can't afford the abundant Christian resources the West enjoys, and don't have permission to translate them due to copyright restrictions.
             .icon
                 Icon(name="streamline-freehand:worldwide-web-location-pin")
 
@@ -72,7 +72,7 @@ nav.nav-back
             .icon
                 Icon(name="streamline-freehand:business-cash-idea")
             .text
-                p What if we instead used the model most churches and missionaries use today #[strong for all Christian resources]? Raising donations rather than charging fees.
+                p We should instead use the model most churches and missionaries use today for #[strong all Christian resources]. Raising donations rather than charging fees.
                 p Even if it were not feasible to give physical books for free, simply releasing them from copyright would allow free digital distribution and translation.
 
         img.impact(src='/illustrations/impact.svg')
@@ -83,7 +83,7 @@ nav.nav-back
                 span.total /8
             .text
                 p This might involve some sacrifice, just as many missionaries joyfully persevere through funding shortfalls today.
-                p But we should take encouragement from the Lord who gave his life freely for us, and told his disciples:
+                p But we should take encouragement from the Lord who gave his life #[strong freely for us], and told his disciples:
                 p
                     em “Freely you received, freely give.” (Matt&nbsp;10:8)
             .icon.custom-icon
