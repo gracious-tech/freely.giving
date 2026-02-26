@@ -72,8 +72,8 @@ nav.nav-back
             .icon
                 Icon(name="streamline-freehand:business-cash-idea")
             .text
-                p We should instead use the model most churches and missionaries use today for #[strong all Christian resources]. Raising donations rather than charging fees.
-                p Even if it were not feasible to give physical books for free, simply releasing them from copyright would allow free digital distribution and translation.
+                p We should instead use the model most churches and missionaries use today for #[strong all Christian resources]. Receiving donations rather than charging fees.
+                p Not all authors can afford to give away physical books, but simply releasing them from copyright would allow free digital distribution and translation.
 
         img.impact(src='/illustrations/impact.svg')
 
@@ -205,7 +205,9 @@ definePageMeta({
         line-height: 1.6
 
         strong
-            font-weight: 700
+            font-weight: inherit
+            background-color: #fff2
+            padding: 0 4px
 
 .final-cta
     text-align: center
