@@ -30,6 +30,8 @@
                 div New Testament manuscript research and tools
                 GO(to='https://gracious.tech') Gracious Tech
                 div Mission-focused apps
+                GO(to='https://lets.church') Let's Church
+                div Christian media hosting and streaming
                 GO(to='https://freely-given.org/') Freely-Given.org
                 div Bible tools and resources
                 GO(to='https://www.linguadeogloria.com/') Lingua Deo Gloria
