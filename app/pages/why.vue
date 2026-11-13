@@ -8,6 +8,8 @@ nav.nav-back
     h1.main-title Why Freely Give
     h2.subtitle Christian Resources?
 
+    IntroVideo.intro-video
+
     .sections
         section.section.icon-left
             .section-number
@@ -140,6 +142,9 @@ definePageMeta({
     margin-bottom: 200px
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
 
+.intro-video
+    margin-bottom: 200px  // Same gap as between the numbered points
+
 .sections
     display: flex
     flex-direction: column
@@ -262,6 +267,9 @@ definePageMeta({
 
     .sections
         gap: 60px
+
+    .intro-video
+        margin-bottom: 60px
 
     .icon
         font-size: 5rem

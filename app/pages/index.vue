@@ -8,41 +8,23 @@
             h1.hero-title the things of God
             p.hero-quote “Freely you received, freely give.” &mdash; Jesus
 
-        .intro-buttons
-            GO.intro-btn(to="/why")
-                .btn-content
-                    h3 Why does it matter?
-            GO.intro-btn(to="/questions")
-                .btn-content
-                    h3 Questions &amp; Answers
+        IntroVideo.intro-video
+
+        .other-buttons
+            GO.btn-primary(to="/questions") Questions &amp; Answers
 
     .content-section.browse-section
         h2.section-title Browse freely given resources
         .resource-grid
-            button.resource-card.gradient-books(@click="open_resource('books')")
-                Icon.card-icon(name="material-symbols:auto-stories")
-                span.card-label Books
-            button.resource-card.gradient-music(@click="open_resource('music')")
-                Icon.card-icon(name="material-symbols:music-note")
-                span.card-label Music
-            button.resource-card.gradient-videos(@click="open_resource('videos')")
-                Icon.card-icon(name="material-symbols:play-circle")
-                span.card-label Videos
-            button.resource-card.gradient-images(@click="open_resource('images')")
-                Icon.card-icon(name="material-symbols:image")
-                span.card-label Images
-            button.resource-card.gradient-software(@click="open_resource('software')")
-                Icon.card-icon(name="material-symbols:apps")
-                span.card-label Apps
-            button.resource-card.gradient-scripture(@click="open_resource('scripture')")
-                Icon.card-icon(name="fa7-solid:bible")
-                span.card-label Bibles
-            button.resource-card.gradient-other(@click="open_resource('other')")
-                Icon.card-icon(name="material-symbols:auto-awesome-motion")
-                span.card-label Other
+            GO.resource-card(
+                v-for="category of resource_categories"
+                :key="category.id"
+                :class="category.gradient_class"
+                :to="`/browse#${category.id}`"
+            )
+                Icon.card-icon(:name="category.icon")
+                span.card-label {{ category.title }}
 
-        .other-buttons
-            GO.btn-primary.small(to="/publish") Publish a free resource
 
     .content-section.people-section
         h2.section-title Meet who's freely giving
@@ -52,22 +34,11 @@
                     img(:src='`/people/${person}.webp`' :title='people[person].title')
             .person-card-overlay(v-if='hovered_person')
                 CommittedPerson(:id='hovered_person')
-        .other-buttons
-            GO.btn-primary.small(to="/people") People
-            GO.btn-primary.small(to="/groups") Groups
 
     div.about
         GO.nav-link(to="/about") About
         GO.facebook(to='https://www.facebook.com/freely.giving.website')
             img(src="~/assets/icon_facebook.svg" alt="Facebook")
-
-    BooksModal(:is_open="selected_resource === 'books'" @close="close_modal")
-    VideosModal(:is_open="selected_resource === 'videos'" @close="close_modal")
-    ImagesModal(:is_open="selected_resource === 'images'" @close="close_modal")
-    MusicModal(:is_open="selected_resource === 'music'" @close="close_modal")
-    SoftwareModal(:is_open="selected_resource === 'software'" @close="close_modal")
-    ScriptureModal(:is_open="selected_resource === 'scripture'" @close="close_modal")
-    OtherModal(:is_open="selected_resource === 'other'" @close="close_modal")
 
 </template>
 
@@ -75,17 +46,9 @@
 import { ref, onMounted } from 'vue'
 import { people, people_ids_randomized, randomize_people } from '@/components/people'
 import CommittedPerson from '@/components/CommittedPerson.vue'
+import { resource_categories } from '@/components/resources'
 
-const selected_resource = ref<string | null>(null)
 const hovered_person = ref<string | null>(null)
-
-function open_resource(type: string) {
-    selected_resource.value = type
-}
-
-function close_modal() {
-    selected_resource.value = null
-}
 
 onMounted(() => {
     randomize_people()
@@ -180,69 +143,8 @@ onMounted(() => {
     font-weight: 300
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2)
 
-.intro-buttons
-    display: flex
-    justify-content: center
-    align-items: center
-    gap: 24px
-    margin-top: 60px
-
-.intro-btn
-    background: rgba(255, 255, 255, 0.1)
-    backdrop-filter: blur(10px)
-    border: 2px solid rgba(255, 255, 255, 0.3)
-    border-radius: 16px
-    padding: 30px 20px
-    width: 100%
-    max-width: 400px
-    text-decoration: none
-    transition: all 0.3s ease
-    cursor: pointer
-
-    @media (max-width: 768px)
-        padding: 24px
-
-    &:first-child
-        position: relative
-        background: linear-gradient(135deg, #14b8838f 0%, rgba(56, 189, 248, 0.3) 100%)
-        backdrop-filter: blur(12px)
-        border: 1px solid rgba(255, 255, 255, 0.3)
-        box-shadow: 0 6px 25px rgba(20, 184, 166, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4)
-
-        h3
-            color: white
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2)
-
-        &::before
-            content: ''
-            position: absolute
-            inset: -3px
-            border-radius: 16px
-            padding: 3px
-            background: conic-gradient(from var(--angle), transparent 0deg, transparent 270deg, rgba(255, 255, 255, 0.5) 315deg, transparent 360deg)
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)
-            -webkit-mask-composite: xor
-            mask-composite: exclude
-            animation: rotating-border 8s linear infinite
-            pointer-events: none
-
-        &:hover
-            background: linear-gradient(135deg, #14b883cc 0%, rgba(56, 189, 248, 0.5) 100%)
-            box-shadow: 0 8px 35px rgba(20, 184, 166, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5)
-            transform: translateY(-4px) scale(1.02)
-
-    &:hover
-        background: rgba(255, 255, 255, 0.25)
-        border-color: rgba(255, 255, 255, 0.5)
-        transform: translateY(-4px)
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2)
-
-    h3
-        margin: 0
-        font-size: 1.3rem
-        color: white
-        font-weight: 600
-        line-height: 1.4
+.intro-video
+    margin-top: 120px  // Matches the gap below the hero section
 
 .content-section
     max-width: 900px
@@ -272,7 +174,6 @@ onMounted(() => {
     flex-wrap: wrap
     max-width: 1000px
     margin: 0 auto
-    margin-bottom: 48px
 
 .resource-card
     border-radius: 50%
@@ -332,9 +233,6 @@ onMounted(() => {
     .resource-grid
         gap: 20px
 
-    .intro-buttons
-        flex-direction: column
-
     .resource-card
         animation: pop-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards
 
@@ -369,7 +267,7 @@ onMounted(() => {
         transform: translateY(-12px)
 
 .people-section
-    margin: 80px auto 40px
+    margin: 120px auto 40px  // Same gap as between the other home page sections
 
 .people-wrapper
     position: relative
@@ -432,16 +330,5 @@ onMounted(() => {
     to
         opacity: 1
         transform: translateX(-50%) scale(1)
-
-@property --angle
-    syntax: '<angle>'
-    initial-value: 0deg
-    inherits: false
-
-@keyframes rotating-border
-    0%
-        --angle: 0deg
-    100%
-        --angle: 360deg
 
 </style>

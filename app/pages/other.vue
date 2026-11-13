@@ -2,10 +2,6 @@
 <template lang="pug">
 
 .content-page
-    GO.back-link(to="/")
-        Icon(name="material-symbols:arrow-back")
-        | Back
-
     .page-header
         h1.page-title Other Resources
         h2.page-subtitle This page lists resources that don't fit into the common categories

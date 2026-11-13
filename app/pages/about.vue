@@ -2,10 +2,6 @@
 <template lang="pug">
 
 .content-page
-    GO.back-link(to="/")
-        Icon(name="material-symbols:arrow-back")
-        | Back
-
     .page-header
         h1.page-title About Freely.Giving
 

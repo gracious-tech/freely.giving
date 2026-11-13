@@ -2,9 +2,7 @@
 <template lang="pug">
 
 .content-page
-    GO.back-link(to="/")
-        Icon(name="material-symbols:arrow-back")
-        | Back
+    CommunityTabs
 
     .page-header
         h1.page-title Groups

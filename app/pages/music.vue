@@ -2,10 +2,6 @@
 <template lang="pug">
 
 .content-page
-    GO.back-link(to="/")
-        Icon(name="material-symbols:arrow-back")
-        | Back
-
     .page-header
         h1.page-title Freely Given Music
         h2.page-subtitle This is a temporary listing of modern Christian music that is free from copyright restrictions. We pray that there will one day be a modern platform with hundreds of artists convicted to freely give their music.

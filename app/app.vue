@@ -1,8 +1,18 @@
 
+<template lang="pug">
+
+div
+    SiteNav(v-if="show_nav")
+    NuxtPage
+
+</template>
 
 <script setup>
 
 const route = useRoute()
+
+// The intro and quiz are standalone experiences without site navigation
+const show_nav = computed(() => !['/why', '/quiz'].includes(route.path))
 
 
 // Global head configuration
@@ -44,8 +54,3 @@ onMounted(() => {
 })
 
 </script>
-<template>
-    <div>
-        <NuxtPage />
-    </div>
-</template>

@@ -2,10 +2,6 @@
 <template lang="pug">
 
 .content-page
-    GO.back-link(to="/questions")
-        Icon(name="material-symbols:arrow-back")
-        | Back
-
     .page-header
         h1.page-title How to Fund
         p.page-subtitle Freely giving resources does not mean you can't receive any funding for them. Churches have been funded purely through donations for thousands of years.

@@ -2,10 +2,6 @@
 <template lang="pug">
 
 .content-page
-    GO.back-link(to="/")
-        Icon(name="material-symbols:arrow-back")
-        span Home
-
     .page-header
         h1.page-title Publish a Free Resource
 
