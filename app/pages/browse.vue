@@ -11,7 +11,7 @@
             v-for="category of resource_categories"
             :key="category.id"
             :id="category.id"
-            :class="category.gradient_class"
+            :class="[category.gradient_class, {highlight: highlighted === category.id}]"
         )
             //- Full colour shows in the header, while the body lightens it to a faint tinge
             .category-header
@@ -28,6 +28,34 @@ import { resource_categories } from '@/components/resources'
 definePageMeta({
     title: "Browse freely given Christian resources",
 })
+
+const route = useRoute()
+
+// Category briefly highlighted after being linked to
+const highlighted = ref<string | null>(null)
+let highlight_timer: ReturnType<typeof setTimeout> | undefined
+
+// Highlight the category named in the URL hash, restarting if already highlighted
+function highlight_from_hash(): void {
+    const id = route.hash.slice(1)
+    clearTimeout(highlight_timer)
+    highlighted.value = null
+    if (!resource_categories.some(category => category.id === id)) {
+        return
+    }
+    // Wait a frame so the animation restarts when the same category is linked again
+    requestAnimationFrame(() => {
+        highlighted.value = id
+        highlight_timer = setTimeout(() => {
+            highlighted.value = null
+        }, 3000)
+    })
+}
+
+// Highlight on arrival and whenever the hash changes while on the page
+onMounted(highlight_from_hash)
+watch(() => route.hash, highlight_from_hash)
+onUnmounted(() => clearTimeout(highlight_timer))
 
 </script>
 
@@ -55,6 +83,12 @@ definePageMeta({
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15)
     display: flex
     flex-direction: column
+
+    // Glow briefly to show which category was linked to
+    &.highlight
+        position: relative
+        z-index: 1  // Keep the glow above neighbouring cards
+        animation: highlight 3s ease-in-out
 
     // Cards are too narrow for the link and description to sit side by side
     :deep(.external-link-wrapper)
@@ -122,5 +156,20 @@ definePageMeta({
     // Space out the collections more where there is room
     @media (min-width: 769px)
         gap: 24px
+
+@keyframes highlight
+    0%
+        transform: scale(1)
+        box-shadow: 0 0 0 6px white, 0 0 60px 10px rgba(255, 255, 255, 0.7)
+    25%
+        transform: scale(1.04)
+    50%
+        transform: scale(1)
+    60%
+        transform: scale(1)
+        box-shadow: 0 0 0 6px white, 0 0 60px 10px rgba(255, 255, 255, 0.7)
+    100%
+        transform: scale(1)
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15)
 
 </style>

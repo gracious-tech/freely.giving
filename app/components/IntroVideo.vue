@@ -8,7 +8,7 @@
         span
         span
     iframe(
-        src="https://lets.church/embed/media/bF36MWJoAaFMxE9XT9RZsE"
+        src="https://lets.church/embed/media/gMMfb2W8BFbiTSoQrvaC9E"
         allowfullscreen
         allow="fullscreen; picture-in-picture"
         @load="loaded = true"
