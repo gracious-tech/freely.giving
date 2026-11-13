@@ -6,7 +6,7 @@
         .hero-titles
             h1.hero-title Freely giving
             h1.hero-title the things of God
-            p.hero-quote “Freely you received, freely give.” &mdash; Jesus
+            p.hero-quote “Freely you received, freely give.” #[span.quote-author &mdash; Jesus]
 
         IntroVideo.intro-video
 
@@ -142,6 +142,12 @@ onMounted(() => {
     font-style: italic
     font-weight: 300
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2)
+
+// Put the attribution on its own line on phones
+.quote-author
+    @media (max-width: 768px)
+        display: block
+        margin-top: 4px
 
 .intro-video
     margin-top: 120px  // Matches the gap below the hero section
