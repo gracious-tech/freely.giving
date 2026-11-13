@@ -188,7 +188,7 @@ onMounted(() => {
     margin-top: 60px
 
 .intro-btn
-    background: transparent
+    background: rgba(255, 255, 255, 0.1)
     backdrop-filter: blur(10px)
     border: 2px solid rgba(255, 255, 255, 0.3)
     border-radius: 16px
