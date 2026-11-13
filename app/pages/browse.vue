@@ -69,12 +69,11 @@ onUnmounted(() => clearTimeout(highlight_timer))
     margin: 60px auto 0
 
     @media (max-width: 768px)
-        gap: 24px
+        gap: 32px
         margin-top: 40px
 
     @media (max-width: 480px)
         grid-template-columns: 1fr
-        gap: 16px
 
 .category
     border-radius: 20px
