@@ -36,6 +36,15 @@ const loaded = ref(false)
     iframe
         position: relative
 
+    // Span the full screen width on phones, ignoring the page's side padding
+    @media (max-width: 768px)
+        width: 100vw
+        margin-left: calc(50% - 50vw)
+        border-radius: 0
+
+        iframe
+            border-radius: 0
+
 .video-loading
     position: absolute
     inset: 0
