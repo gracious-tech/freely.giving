@@ -9,7 +9,6 @@
         :description="link.description"
         :badge="link.badge"
     ) {{ link.label }}
-    p.disclaimer(v-if="category.disclaimer") {{ category.disclaimer }}
 
 </template>
 
@@ -33,15 +32,5 @@ defineProps<{
 
     @media (max-width: 768px)
         gap: 12px
-
-.disclaimer
-    margin: 16px 0 0
-    padding-top: 24px
-    border-top: 1px solid rgba(255, 255, 255, 0.2)
-    color: rgba(255, 255, 255, 0.85)
-    font-size: 18px
-    line-height: 1.6
-    text-align: center
-    font-style: italic
 
 </style>

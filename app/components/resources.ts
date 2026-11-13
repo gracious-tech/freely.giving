@@ -14,7 +14,6 @@ export interface ResourceCategory {
     icon: string
     gradient_class: string
     links: ResourceLink[]
-    disclaimer?: string
 }
 
 // Badge for collections that include some resources that aren't freely given
@@ -57,9 +56,6 @@ export const resource_categories: ResourceCategory[] = [
                 description: 'A small list of modern Christian music',
             },
         ],
-        disclaimer: 'A modern platform with modern music that can be browsed, streamed, and'
-            + ' displayed with presentation software, is still to come. Please pray someone is'
-            + ' able to take on such a task.',
     },
     {
         id: 'videos',

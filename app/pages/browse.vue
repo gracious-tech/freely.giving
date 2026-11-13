@@ -113,11 +113,6 @@ onUnmounted(() => clearTimeout(highlight_timer))
         font-size: 15px
         color: #2a2a2a
 
-    :deep(.disclaimer)
-        font-size: 15px
-        color: #444
-        border-top-color: rgba(0, 0, 0, 0.1)
-
 .category-header
     display: flex
     align-items: center
