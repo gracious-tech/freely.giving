@@ -153,9 +153,11 @@ onUnmounted(() => clearTimeout(highlight_timer))
     @media (max-width: 480px)
         padding: 20px
 
-    // Space out the collections more where there is room
-    @media (min-width: 769px)
-        gap: 24px
+    // Clear separation between each collection in the card
+    gap: 36px
+
+    @media (max-width: 768px)
+        gap: 28px
 
 @keyframes highlight
     0%
