@@ -16,7 +16,6 @@ ResourceModal(
         url="https://commonwealpress.org/"
         description="Reformed and Puritan classics edited for modern readers"
     ) Common Weal Press
-    p.disclaimer There are currently very few books available for free distribution. Please pray for more authors to be convicted of the importance of freely giving.
 
 </template>
 
