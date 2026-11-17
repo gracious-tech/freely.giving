@@ -46,14 +46,15 @@ export const resource_categories: ResourceCategory[] = [
         gradient_class: 'gradient-music',
         links: [
             {
+                url: 'https://worshipcommons.org/',
+                label: 'WorshipCommons',
+                description: 'Modern worship songs and hymns, with tools for leading them',
+                badge: restricted,
+            },
+            {
                 url: 'http://openhymnal.org/',
                 label: 'Open Hymnal',
                 description: 'A large collection of historic hymns',
-            },
-            {
-                url: '/music',
-                label: 'Freely Given Music',
-                description: 'A small list of modern Christian music',
             },
         ],
     },
